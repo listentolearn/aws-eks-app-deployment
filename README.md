@@ -23,15 +23,15 @@
 ## Some helpful commands
 
 1. To set kube config context
-    aws eks update-kubeconfig --region us-east-1 --name <clusterName>
+    aws eks update-kubeconfig --region us-east-1 --name clusterName
 2. To apply kubectl config
-    kubectl apply -f <config>.yaml
+    kubectl apply -f config.yaml
 3. Add helm repo
     helm repo add eks https://aws.github.io/eks-charts
 4. helm install load balancer
     helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   -n kube-system \
-  --set clusterName=<clusterName> \
+  --set clusterName=clusterName \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller
 
