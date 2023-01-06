@@ -23,6 +23,7 @@
 ## Some helpful commands
 
 1. To set kube config context
+
 aws eks update-kubeconfig --region us-east-1 --name clusterName
 2. To apply kubectl config
 kubectl apply -f config.yaml
