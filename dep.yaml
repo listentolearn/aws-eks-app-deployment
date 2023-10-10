@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usn-nginx-deployment
+  namespace: usn
+  labels:
+    app: usn-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: usn-nginx
+  template:
+    metadata:
+      labels:
+        app: usn-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: 172.1.14.168:5001/nginx
+        ports:
+        - containerPort: 80
+
